@@ -5,7 +5,7 @@ const app = express()
 
 
 app.use('/', (request, response) => {
-  response.send('HELLO YOU.')
+  response.render('index')
 })
 
 
