@@ -3,36 +3,9 @@ const path = require('path')
 const app = express()
 
 
-
 app.use('/', (request, response) => {
-  response.render('index')
+  response.render('app.js')
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.listen('3000')
 console.log("listening on port 3000");
