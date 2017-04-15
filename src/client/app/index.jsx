@@ -3,7 +3,7 @@ import {render} from 'react-dom'
 
 class Task extends React.Component {
   render() {
-    return <p>Hello React Stupidest Component!</p>
+    return <p>Hello React Component!</p>
   }
 }
 

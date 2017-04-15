@@ -4,7 +4,7 @@ const app = express()
 
 
 app.use('/', (request, response) => {
-  response.render('app.js')
+  response.render('src/client/public/bundle.js')
 })
 
 app.listen('3000')
