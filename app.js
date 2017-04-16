@@ -1,12 +1,27 @@
-const express = require('express');
+const express = require('express')
 const path = require('path')
+const port = (process.env.PORT || 3000)
 const app = express()
+const router = require('./routes/router.js')
+
+app.use(express.static(path.resolve(__dirname + '/public')))
+app.use('/', router)
 
 
-app.use('/', (request, response) => {
-  response.render('app.js')
+// const indexPath = path.join(__dirname, './src/client/index.html')
+// const publicPath = express.static(path.join(__dirname, './src/public'))
+// app.use('/public', publicPath)
+// app.get('/', (request, response) => {
+//   response.sendFile(indexPath)
+// })
+
+
+
+
+
+app.listen(port, function(){
+  console.log("listening on " +`${port}`)
+
 })
 
-app.listen('3000')
-console.log("listening on port 3000");
 module.exports = app
