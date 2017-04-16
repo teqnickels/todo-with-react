@@ -1,12 +1,17 @@
-const express = require('express');
+const express = require('express')
 const path = require('path')
+const port = process.env.PORT || 3000
 const app = express()
+var server = require('http').createServer(app)
 
-
-app.use('/', (request, response) => {
-  response.render('app.js')
+app.set('view engine', server)
+app.use(express.static('public'))
+app.get('/', function(request, response){
+  response.sendFile('./index.html');
 })
 
-app.listen('3000')
-console.log("listening on port 3000");
+
+server.listen(port)
+
+
 module.exports = app
